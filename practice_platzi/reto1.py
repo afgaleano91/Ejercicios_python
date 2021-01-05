@@ -1,21 +1,23 @@
 if __name__ == '__main__':
-    lista = []
+    dic = {}
+    s = list()
+
     for i in range(int(input())):
         name = input()
         score = float(input())
-        lista.append([name,score])
-    print(lista)
 
-    puntaje = float(0)
-    new_list =[]
-    
-    for objeto in lista:
-        print(objeto)
-        puntaje = 
-        if puntaje == objeto[1]:
-            new_list.append([objeto])
+        if score in dic:
+            dic[score].append(name)
         else:
-            puntaje = objeto[1]
-    print(new_list)
+            dic[score]=[name]
 
+        if score not in s:
+            s.append(score)
 
+    m=min(s)
+    s.remove(m)
+    m1=min(s)
+    dic[m1].sort()
+
+    for i in dic[m1]:
+        print(i)
